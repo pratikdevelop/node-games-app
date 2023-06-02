@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  sqlite3:
+    container_name: sqlite3_container
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    ports:
+      - ${DB_DOCKER_PORT}:${DB_LOCAL_PORT}
+    restart: unless-stopped
+  app:
+    depends_on:
+      - sqlite3
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - ${DOCKER_PORT}:${LOCAL_PORT}
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DATABASE}
+      - DB_LOCAL_PORT=${DB_DOCKER_PORT}
+    stdin_open: true
+    tty: true
+    volumes:
+      - /app
+  nginx:
+    image: nginx
+    ports:
+      - "8080:${DOCKER_PORT}"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
