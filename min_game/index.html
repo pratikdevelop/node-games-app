@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div class="hud">
+	<div class="hud__score">
+		<div class="score-lbl"></div>
+		<div class="cube-count-lbl"></div>
+	</div>
+	<div class="pause-btn"><div></div></div>
+	<div class="slowmo">
+		<div class="slowmo__bar"></div>
+	</div>
+</div>
+
+<div class="menus">
+	<div class="menu menu--main">
+		<h1>MENJA</h1>
+		<button type="button" class="play-normal-btn">PLAY GAME</button>
+		<button type="button" class="play-casual-btn">CASUAL MODE</button>
+		<div class="credits">An 8kB game by <a href="https://cmiller.tech">Caleb Miller</a></div>
+	</div>
+	<div class="menu menu--pause">
+		<h1>Paused</h1>
+		<button type="button" class="resume-btn">RESUME GAME</button>
+		<button type="button" class="menu-btn--pause">MAIN MENU</button>
+	</div>
+	<div class="menu menu--score">
+		<h1>Game Over</h1>
+		<h2>Your Score:</h2>
+		<div class="final-score-lbl"></div>
+		<div class="high-score-lbl"></div>
+		<button type="button" class="play-again-btn">PLAY AGAIN</button>
+		<button type="button" class="menu-btn--score">MAIN MENU</button>
+		<a type="button" href="../index.php" class="menu-btn--score">Back</a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>
